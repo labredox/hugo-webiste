@@ -1,0 +1,52 @@
+.news-list,
+.publications-list {
+  display: flex;
+  flex-grow: 1;
+}
+
+.links-list {
+  display: flex;
+  flex-grow: 1;
+
+  .link {
+    border: none;
+    .card-header {
+      height: 150px;
+      background-color: transparent;
+      position: relative;
+      padding: 20px;
+      border: none;
+
+      .card-img-top {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0 40px;
+        margin: auto;
+      }
+    }
+    .card-body {
+      h5 {
+        margin: 0;
+        padding: 0 0 20px 0;
+
+        @include media-breakpoint-up(md) {
+          padding: 0 0 20px 0;
+        }
+
+        a {
+          color: $steel;
+          font-family: $font-family-base;
+          font-size: 0.8em;
+        }
+        a:hover {
+          color:$secondary;
+        }
+      }
+      padding: 0;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+@import 'variables';
+@import 'bootstrap-variables';
+
+// Bootstrap
+@import 'bootstrap/bootstrap';
+@import 'bootstrap/bootstrap-grid';
+@import 'bootstrap/mixins';
+@import 'bootstrap/utilities/text';
+@import 'bootstrap/carousel';
+
+// FontAwesome
+@import 'fontawesome/fontawesome';
+
+//Libraries
+@import 'libraries/hamburgers/hamburgers';
+
+//Components
+@import 'components/header';
+@import 'components/main-menu';
+@import 'components/main-menu-mobile';
+@import 'components/hamburguer';
+@import 'components/main';
+@import 'components/intro';
+@import 'components/contact';
+@import 'components/card';
+@import 'components/person';
+@import 'components/gallery';
+@import 'components/footer';
+
+body {
+  font-size: 16px;
+  line-height: 1.1;
+  font-family: $font-family-base;
+  @include media-breakpoint-up(md) {
+    font-size: 17px;
+    line-height: 1.2;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: $font-family-heading;
+}
+
+blockquote {
+  font-size: 0.9em;
+  color: #888;
+}
+
+a:hover {
+  text-decoration: none;
+}

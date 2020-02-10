@@ -1,0 +1,31 @@
+<div class="person card">
+    <div class="card-header">
+        <div class="card-img-top" style="background-image: url('/{{ .Params.picture }}');"></div>
+    </div>
+    <div class="card-body text-center">
+        <h2 class="title">
+            <a href="{{ .Permalink }}">{{ .Params.name }}</a>
+        </h2>
+        {{ if eq .Params.main true }}
+        <p>Pesquisadora Responsável</p>
+        {{ end }}
+        {{ if eq .Params.student true }}
+        <p>Estudante</p>
+        {{ end }}
+        <p>{{ .Params.subtitle }}</p>
+        
+        <div class="links">
+            {{ if (.Params.lattes) }}
+            <a href="{{ .Params.lattes }}" class="lattes" target="_new"><img src="/img/team/lates.png" style="width: 30px;" /></a>
+            {{ end}}
+            {{ if (.Params.scholar) }}
+            <a href="{{ .Params.scholar }}" class="scholar" target="_new"><img src="/img/team/scholar.png" style="width: 30px;" /></a>
+            {{ end}}
+            {{ if (.Params.researchgate) }}
+            <a href="{{ .Params.researchgate }}" class="researchgate" target="_new">
+                <h5>R<sup>G</sup></h5>
+            </a>
+            {{ end}}
+        </div>
+    </div>
+</div>

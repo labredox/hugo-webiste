@@ -1,0 +1,28 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-services-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+  <div class="row justify-content-start">
+    <div class="col-12 col-md-12">
+      <div class="service service-single">
+        <h1 class="title">{{ .Title | safeHTML }}</h1>
+        <div class="content">
+          Site da notícia<a href="{{ .Params.link }}" target="_new"> {{ .Params.link }}</a>
+        </div>
+        <hr/>
+
+        {{ .Content }}
+
+        {{ if isset .Params "screenshot" }}
+        <div style="width:100%; max-height:500px; overflow:scroll; overflow-y: scroll;">
+          <img src="{{.Params.screenshot}}" alt="{{.Title}}" style="width: 100%;" />
+        </div>
+        {{ end }}
+
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

@@ -1,0 +1,15 @@
+.gallery {
+  margin: 3vw;
+  .carousel-item {
+    height: 50vw;
+    max-height: 600px;
+    div {
+      background: {
+        position: 20% 10%;
+        repeat: no-repeat;
+        size: cover;
+      }
+      height: inherit;
+    }
+  }
+}

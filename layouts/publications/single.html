@@ -1,0 +1,80 @@
+{{ define "header_css" }}{{ end }}
+{{ define "body_classes" }}page-services-single{{ end }}
+{{ define "header_classes" }}{{ end }}
+
+{{ define "main" }}
+<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
+  <div class="row justify-content-start">
+
+    <div class="news news-single">
+      <h1 class="title col-12 text-justify">
+        {{if .Params.book }} <i class="fas fa-book fa-2x" style="float: left; margin:10px 20px 0 0"></i> {{end}}
+        {{if .Params.magazine }} <i class="far fa-newspaper fa-2x" style="float: left; margin:10px 20px 0 0"></i>
+        {{end}}
+        {{.Title | safeHTML}}
+      </h1>
+      <div style="clear:both; padding:20px">
+        <div class="details"
+          style="margin: 0; padding: 20px; background-color: rgb(219, 219, 235); color: rgb(67, 67, 113);">
+          <p>
+            <i class="fas fa-users"></i> Autores:
+            <p>
+              <span class="main{{if eq .Params.mainAuthor "Truzzi, Daniela R."}} font-weight-bold{{end}}"
+                style="white-space:nowrap;">
+                {{ .Params.mainAuthor }}
+              </span>
+              {{ range .Params.authors}}
+              ; <span class="author{{if eq . "Truzzi, Daniela R."}} font-weight-bold{{end}}"
+                style="white-space:nowrap;">
+                {{ . }}
+              </span>
+              {{ end}}
+            </p>
+          </p>
+          <p>
+            {{if .Params.magazine}}
+            <i class="fas fa-newspaper"></i> em:
+            <p>
+              <strong>{{ .Params.magazine }}</strong>
+              {{ if .Params.volume }}
+              , v. {{ .Params.volume }}
+              {{ end }}
+
+              {{ if .Params.pages }}
+              , p. {{ .Params.pages }}
+              {{ end }}
+
+              {{ if .Params.year }}
+              , {{ .Params.year }}
+              {{ end}}
+            </p>
+            {{ end }}
+            {{if .Params.book}}
+            <i class="fas fa-book"></i> em:
+            <p>
+              <strong>{{ .Params.book }}</strong>
+              <em>({{.Params.publisher}})</em>
+              {{ if .Params.edition }}
+              , {{ .Params.edition }} ed
+              {{ end }}
+
+              {{ if .Params.pages }}
+              , p. {{ .Params.pages }}
+              {{ end }}
+
+              {{ if .Params.year }}
+              , {{ .Params.year }}
+              {{ end}}
+            </p>
+            {{ end }}
+          </p>
+
+        </div>
+      </div>
+      <hr />
+      <div class="content">{{.Content}}</div>
+    </div>
+
+  </div>
+</div>
+{{ end }}

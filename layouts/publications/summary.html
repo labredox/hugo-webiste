@@ -1,0 +1,60 @@
+<div class="publication summary" style="background-color: #f7f7ff;">
+    <h2 class="title">
+        <a href="{{ .Permalink }}">{{ .Title | safeHTML }}</a>
+    </h2>
+    
+    <div class="container" style="font-size: 0.8em; padding-top: 15px; color: rgb(92, 90, 90)">
+        <i class="fas fa-users"></i>
+        <span class="main{{if eq .Params.mainAuthor "Truzzi, Daniela R."}} font-weight-bold{{end}}"
+            style="white-space:nowrap;">
+            {{ .Params.mainAuthor }}
+        </span>
+        {{ range .Params.authors}}
+        ; <span class="author{{if eq . "Truzzi, Daniela R."}} font-weight-bold{{end}}" style="white-space:nowrap;">
+            {{ . }}
+        </span>
+        {{ end}}
+    </div>
+    
+    {{if .Params.book }}
+    <div class="container" style="font-size: 0.8em; padding: 15px; color: rgb(92, 90, 90)">
+        <i class="fas fa-book"></i>
+        <strong>{{ .Params.book }}</strong>
+        <em>({{.Params.publisher}})</em>
+        {{ if .Params.edition }}
+        , {{ .Params.edition }} ed
+        {{ end }}
+
+        {{ if .Params.pages }}
+        , p. {{ .Params.pages }}
+        {{ end }}
+
+        {{ if .Params.year }}
+        , {{ .Params.year }}
+        {{ end}}
+    </div>
+    {{end}}
+    
+    {{if .Params.magazine}}
+    <div class="container" style="font-size: 0.8em; padding: 15px; color: rgb(92, 90, 90)">
+        <i class="far fa-newspaper"></i>
+        <strong>{{ .Params.magazine }}</strong>
+
+        {{ if .Params.volume }}
+        , v. {{ .Params.volume }}
+        {{ end }}
+
+        {{ if .Params.pages }}
+        , p. {{ .Params.pages }}
+        {{ end }}
+
+        {{ if .Params.year }}
+        , {{ .Params.year }}
+        {{ end}}
+    </div>
+    {{ end }}
+
+    {{ if .Summary }}
+    <p>{{ .Summary | plainify | htmlUnescape | truncate 120 "…" }}</p>
+    {{ end }}
+</div>

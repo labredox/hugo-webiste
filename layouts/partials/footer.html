@@ -1,0 +1,42 @@
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-5 col-12 footer-inner">
+        {{ with .Site.GetPage "/team/daniela-truzzi.md" }}
+        <div class="d-none d-lg-block">
+          <div class="footer-card">
+            <div class="avatar" style="background-image: url('/{{ .Params.picture }}');"></div>
+            <h3 class="title">
+              {{ .Params.Name }}
+            </h3>
+            <p>Pesquisadora Responsável</p>
+          </div>
+        </div>
+        {{end}}
+      </div>
+
+      <div class="col-sm-12 col-md-7 col-12">
+        <ul>
+          {{ $currentPage := . }}
+          {{ range .Site.Menus.main }}
+          <li class="menu-item-{{ .Name | lower }}{{ if $currentPage.IsMenuCurrent "main" . }} active{{ end }}">
+            <a href="{{.URL}}">
+              {{ .Name }}
+            </a>
+          </li>
+          {{end}}
+        </ul>
+
+        <div class="contact text-right d-none d-lg-block" style="color: #C2C0C0;">
+          <hr />
+          <address>
+            <i class="fas fa-map-marked-alt fa-4x" style="float:right; margin:-10px 0 0 20px;"></i>
+            Av. Prof. Lineu Prestes, 748 <br />
+            Butantã São Paulo - SP </br>
+            CEP: 05508-000 </br>
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

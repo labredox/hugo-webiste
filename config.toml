@@ -1,0 +1,47 @@
+baseURL = "https://www.labredox.com.br"
+languageCode = "pt-br"
+title = "Laboratorio Redoxoma"
+
+[menu]
+    [[menu.main]]
+        name = "Publicações"
+        title = "publications"
+        url = "/publications/"
+        weight = 1
+    [[menu.main]]
+        title = "team"
+        name = "Equipe"
+        url = "/team/"
+        weight = 2
+    [[menu.main]]
+        title = "news"
+        name = "Notícias"
+        url = "/news/"
+        weight = 3
+    [[menu.main]]
+        title = "gallery"
+        name = "Galeria"
+        url = "/gallery/"
+        weight = 4
+    [[menu.main]]
+        title = "contact"
+        name = "Contato"
+        url = "/contact/"
+        weight = 5
+
+[params]
+
+  [params.homepage_meta_tags]
+    meta_description = "Página do Laboratório de Mecanismos Redox em Bioquímica da Universidade de São Paulo (USP)."
+    meta_og_title = "Hugo Serif Theme"
+    meta_og_type = "website"
+    meta_og_url = "https://www.labredox.com.brm"
+    meta_og_image = ""
+    meta_og_description = "página do Laboratório de Mecanismos Redox em Bioquímica da Universidade de São Paulo (USP)"
+    meta_twitter_card = "summary"
+    meta_twitter_creator = "@julianomarcon"
+
+
+[author]
+    name = "Juliano Marcon"
+    homepage = "https://www.julianomarcon.com.br"
