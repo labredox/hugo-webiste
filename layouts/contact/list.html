@@ -32,36 +32,48 @@
                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </div>
         <div class="col-12 col-md-7 col-lg-6">
+            {{ with .Site.GetPage "/contact/_address.md" }}
             <h4>Endereço</h4>
             <address>
-                Av. Prof. Lineu Prestes, 748 <br />
-                Butantã São Paulo - SP </br>
-                CEP: 05508-000 </br>
+                {{ .Params.Address1 }} <br />
+                {{ .Params.Address2 }} </br>
+                CEP: {{ .Params.zipcode}} </br>
             </address>
-            <hr/>
+            {{ end }}
+            <hr />
+            {{ with .Site.GetPage "/contact/_phones.md" }}
             <h5>Telefones</h5>
+            {{ range .Params.phones }}
             <p>
-                Escritório: Sala 902 :
-                <a href="tel:+551126481682">
+                {{ .location }} :
+                <a href="tel:{{.number}}">
                     <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span itemprop="telephone">(11) 2648-1682</span>
+                    <span itemprop="telephone">{{.formated}}</span>
                 </a>
             </p>
+            {{ end }}
+            {{ end }}
+            <hr />
+            {{ with .Site.GetPage "/contact/_emails.md" }}
+            <h5>E-mail</h5>
+            {{ range .Params.emails }}
             <p>
-                Laboratório: Sala 902 :
-                <a href="tel:+551130913873">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span itemprop="telephone">(11) 3091-3873</span>
+                {{ .responsible }} :
+                <a href="mailto:{{.address}}">
+                    <i class="far fa-envelope" aria-hidden="true"></i>
+                    <span itemprop="email">{{.address}}</span>
                 </a>
             </p>
+            {{ end }}
+            {{ end }}
         </div>
     </div>
-    <hr/>
+    <hr />
     <div class="text-center">
-        <img src="/img/pages/contact/iq_foto.jpg" alt="Fachada do Prédio"/>
+        <img src="/img/pages/contact/iq_foto.jpg" alt="Fachada do Prédio" />
     </div>
-    
-    <br/>
+
+    <br />
 </div>
 
 {{ end }}

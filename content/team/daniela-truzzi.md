@@ -2,6 +2,7 @@
 title: "Daniela"
 date: 2020-02-01T18:22:24-03:00
 name: Daniela Ramos Truzzi
+email: dtruzzi@iq.usp.br
 subtitle: Doutora
 picture: img/team/female.png
 birthdate: 2020-02-01T18:22:24-03:00

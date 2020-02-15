@@ -1,6 +1,7 @@
 baseURL = "https://www.labredox.com.br"
 languageCode = "pt-br"
 title = "Laboratorio Redoxoma"
+enableRobotsTXT=true
 
 [menu]
     [[menu.main]]
