@@ -5,13 +5,13 @@ intro_image_absolute: false
 intro_image_hide_on_mobile: true
 important_links:
     - url: http://redoxoma.iq.usp.br/ 
-      image: img/pages/home/cepid2.png
+      image: img/pages/home/cepid.png
       description: Projeto CEPID Redoxoma
     - url: https://www5.usp.br/
-      image: img/pages/home/usp-2018preto.png
+      image: img/pages/home/usp.png
       description: USP
     - url: http://www3.iq.usp.br/
-      image: img/pages/home/iq.png
+      image: img/pages/home/iq-2.png
       description: Instituto de Química (USP)
 ---
 
