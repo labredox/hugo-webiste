@@ -5,7 +5,7 @@
         {{ with .Site.GetPage "/team/daniela-truzzi.md" }}
         <div class="d-none d-lg-block">
           <div class="footer-card">
-            <div class="avatar" style="background-image: url('/{{ .Params.picture }}');"></div>
+            <div class="lazy avatar" data-src='/{{ .Params.picture }}'></div>
             <h3 class="title">
               {{ .Params.Name }}
             </h3>

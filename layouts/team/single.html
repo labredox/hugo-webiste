@@ -9,11 +9,13 @@
     <p>{{ .Params.subtitle }}</p>
     <div class="links">
       {{ if (.Params.lattes) }}
-      <a href="{{ .Params.lattes }}" class="lattes" target="_new"><img src="/img/team/lates.png"
+      <a href="{{ .Params.lattes }}" class="lattes" target="_new">
+        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/img/team/lates.png"
           style="width: 30px;" /></a>
       {{ end}}
       {{ if (.Params.scholar) }}
-      <a href="{{ .Params.scholar }}" class="scholar" target="_new"><img src="/img/team/scholar.png"
+      <a href="{{ .Params.scholar }}" class="scholar" target="_new">
+        <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/img/team/scholar.png"
           style="width: 30px;" /></a>
       {{ end}}
       {{ if (.Params.researchgate) }}
@@ -27,16 +29,3 @@
   </div>
 </div>
 {{ end }}
-
-{{/* 
-  {{ define "footer_js" }}
-{{ $library := resources.Get "js/libs/library.js" }}
-{{ $services := resources.Get "js/pages/services.js" }}
-{{ $servicesJS := slice $library $services |resources.Concat "js/services.js" }}
-{{ if .Site.IsServer }}
-<script type="text/javascript" src="{{ $servicesJS.RelPermalink }}"></script>
-{{ else }}
-<script type="text/javascript" src="{{ ($servicesJS | minify | fingerprint).RelPermalink }}"></script>
-{{ end }}
-{{ end }}
-*/}}

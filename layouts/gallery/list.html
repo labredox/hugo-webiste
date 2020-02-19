@@ -12,7 +12,8 @@
             {{ if .Params.intro_image }}
             <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
                 <img class="intro-image{{ if .Params.intro_image_absolute }} intro-image-absolute{{ end }}{{ if .Params.intro_image_hide_on_mobile }} intro-image-hide-mobile{{ end }}"
-                    src="{{ .Params.intro_image | relURL }}" />
+                src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" 
+                data-src="{{ .Params.intro_image | relURL }}" />
             </div>
             {{ end }}
         </div>
@@ -35,7 +36,7 @@
             {{ $b := 0 }}
             {{ range $i, $img := $images }}
             <div class="carousel-item{{ if eq $i 0 }} active{{ end }}">
-                <div class="d-block w-100" style="background-image:url('{{ .RelPermalink }}')"></div>
+                <div class="lazy d-block w-100" data-src="{{ .RelPermalink }}"></div>
             </div>
             {{ end }}
         </div>

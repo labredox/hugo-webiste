@@ -1,6 +1,6 @@
 <div class="person card">
     <div class="card-header">
-        <div class="card-img-top" style="background-image: url('/{{ .Params.picture }}');"></div>
+        <div class="lazy card-img-top" data-src="/{{ .Params.picture }}"></div>
     </div>
     <div class="card-body text-center">
         <h2 class="title">
@@ -13,13 +13,17 @@
         <p>Estudante</p>
         {{ end }}
         <p>{{ .Params.subtitle }}</p>
-        
+
         <div class="links">
             {{ if (.Params.lattes) }}
-            <a href="{{ .Params.lattes }}" class="lattes" target="_new"><img src="/img/team/lates.png" style="width: 30px;" /></a>
+            <a href="{{ .Params.lattes }}" class="lattes" target="_new">
+                <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/img/team/lates.png"
+                    style="width: 30px;" /></a>
             {{ end}}
             {{ if (.Params.scholar) }}
-            <a href="{{ .Params.scholar }}" class="scholar" target="_new"><img src="/img/team/scholar.png" style="width: 30px;" /></a>
+            <a href="{{ .Params.scholar }}" class="scholar" target="_new">
+                <img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="/img/team/scholar.png"
+                    style="width: 30px;" /></a>
             {{ end}}
             {{ if (.Params.researchgate) }}
             <a href="{{ .Params.researchgate }}" class="researchgate" target="_new">

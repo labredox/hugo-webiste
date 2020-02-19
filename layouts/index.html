@@ -27,7 +27,7 @@
       <div class="col-12 col-md-5 col-lg-6 order-1 order-md-2 position-relative">
         <img
           class="intro-image{{ if .Params.intro_image_absolute }} intro-image-absolute{{ end }}{{ if .Params.intro_image_hide_on_mobile }} intro-image-hide-mobile{{ end }}"
-          src="{{ .Params.intro_image | relURL }}" />
+          data-src="{{ .Params.intro_image | relURL }}" />
       </div>
       {{ end }}
     </div>
@@ -81,7 +81,9 @@
       {{ range $l := $links }}
       <div class="link card">
         <div class="card-header">
-          <a href="{{ $l.url }}" target="_new"><img class="card-img-top" src="{{ $l.image }}" alt="{{ $l.description }}" /></a>
+          <a href="{{ $l.url }}" target="_new"><img class="card-img-top"
+              src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="{{ $l.image }}"
+              alt="{{ $l.description }}" /></a>
         </div>
         <div class="card-body">
           <h5 class="card-title"><a href="{{ $l.url }}" target="_new">{{ $l.description }}</a></h5>
@@ -100,7 +102,8 @@
       <div class="col-12 col-md-6 col-lg-4 mb-2">
         <div class="feature">
           {{ if .image }}
-          <div class="feature-image"><img alt="{{ .title }} logo" src="{{ .image | relURL }}" /></div>
+          <div class="feature-image"><img alt="{{ .title }} logo"
+              src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="{{ .image | relURL }}" /></div>
           {{ end }}
           <h2 class="feature-title">{{ .title }}</h2>
           <div class="feature-content">
