@@ -31,14 +31,13 @@ enableRobotsTXT=true
         weight = 5
 
 [params]
-
   [params.homepage_meta_tags]
     meta_description = "Página do Laboratório de Mecanismos Redox em Bioquímica da Universidade de São Paulo (USP)."
-    meta_og_title = "Hugo Serif Theme"
+    meta_keywords = "redox, redoxoma, lab redox, laboratorio redox, quimica, quimica analítica, usp, iq"
+    meta_og_title = "Laboratório Redox - USP"
     meta_og_type = "website"
     meta_og_url = "https://www.labredox.com.brm"
     meta_og_image = ""
-    meta_og_description = "página do Laboratório de Mecanismos Redox em Bioquímica da Universidade de São Paulo (USP)"
     meta_twitter_card = "summary"
     meta_twitter_creator = "@julianomarcon"
 
